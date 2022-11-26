@@ -1,6 +1,7 @@
 # Time_just_ran_out
 
 ## Description
+The goal of this weeks challenge is to build a webpage (from scratch) that will allow a user to take a timed test and use javascript to build this. The ideal would be that with this timed test when the timer starts the user is presented with a question, should they answer the question incorrectly time is then taken away from the test. On a successful answer to the test question a new question will be presented (timer still running). All of the questions must be answered or the time will run to zero. The user will also have the ability to save their initials into the game and their score.
 
 ## User Story
 AS A coding boot camp student
