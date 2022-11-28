@@ -31,4 +31,4 @@ THEN I can save my initials and score
 
 ## Deployed Website
 [Website URL]: 
-(https://pietroxero.github.io//)
+(https://pietroxero.github.io/  /)
