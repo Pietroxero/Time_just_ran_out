@@ -8,20 +8,33 @@
     <link rel="stylesheet" type="text/css" href="./Assets/CSS/style.css" />
   </head>
   <body>
-    <!--Start test Button-->
-    <div class="begin_btn"><button>BEGIN!!</button></div>
     <!--Info box-->
     <header id="heading">
       <div class="strip">
         <div>
-          <a>Highscores</a>
+          <a class="playerScores">Highscores</a>
         </div>
+
+        <div class="counter">Timer:</div>
       </div>
     </header>
 
+    <div id="start-quiz" class="quizscreen">
+      <section class="blockinfo">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Try to answer the following code-related question within the time
+          limit.
+        </p>
+        <p>
+          Keep in mind that incorrect answers will penalize your score/time by
+          ten seconds!
+        </p>
+      </section>
+      <!--Start test Button-->
+      <button id="begin_btn">BEGIN!!</button>
+    </div>
 
-
-    
     <script src="./Assets/JS/Script.Js"></script>
   </body>
 </html>

@@ -1,0 +1,37 @@
+header {
+    display: block;
+    justify-content: space-evenly;
+}
+
+body {
+    align-items: center;
+}
+
+.counter {
+float: right;
+font-size: 20px;
+}
+
+.playerScores {
+    float: left;
+font-size: 20px;
+/* display: block; */
+}
+
+#begin_btn {
+    display: block;
+    align-items: center;
+    background-color: indigo;
+    color: white;
+    width: 50%;
+    padding: 1%;
+    border-radius: 8px;
+
+}
+
+.quizscreen{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
