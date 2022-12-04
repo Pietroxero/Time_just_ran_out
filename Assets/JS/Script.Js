@@ -33,12 +33,12 @@ var quizquestions = [
 
   {
     question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    answers: 
-    1: "Javascript",
-    2: "Terminal/Bash",
-    3: "For Loops",
-    4: "Console.log",
-    //correct answer 4
+    answers: ["Javascript", "Terminal/Bash", "For Loops", "Console.log"],
+    // 1: "Javascript",
+    // 2: "Terminal/Bash",
+    // 3: "For Loops",
+    // 4: "Console.log",
+    correct: 4,
   },
 ];
 
@@ -73,13 +73,53 @@ function displayQuestion() {
     if (questionBank >= question.length) {
         endQuiz();
     }
-}
 
 //clears the answers list
 ansListEl.innerHTML = "";
 
 //show the question
 quesEl.textContent = question[questionBank].question;
+
+//populate answer list
+for (let i = 0; i < question[questionBank].answers.length; i++) {
+    //create a list item element
+    let listItem = document.createElement("li");
+
+    //create a button element for the answers
+    let answerButton = document.createElement("button");
+
+    //add answer text to the button
+    answerButton.textContent=questions[questionBank].answers[i];
+
+    //might also want to add a data attribute with the index i for answer checking
+
+    //add button to the list item element
+    listItem.appendChild(answerButton);
+
+    //add the list item to the answer list
+    ansListEl.appendChild(listItem);
+}
+}
+
+function checkAnswers (event) {
+    //stop the click event from further propogation
+    event.stopPropagation();
+
+    //logic for checking answer and adding to score
+
+    //increment question index variable
+    questionBank++;
+
+    //display next question
+    displayQuestion();
+}
+
+//Event Listeners
+beginBttn.addEventListener("click", "runQuiz");
+
+//take advantage of event delegation and listen for click on the parent container
+ansListEl.addEventListener("click", checkAnswers);
+
 
 
 
