@@ -32,7 +32,23 @@
         </p>
       </section>
       <!--Start test Button-->
-      <button id="begin_btn">BEGIN!!</button>
+      <button id="begin_btn" onclick="runQuiz()">BEGIN!!</button>
+    </div>
+
+    <div id="questionscreen" class="hidden">
+      <h1 id="question"></h1>
+        <ol id="answerList">
+          <li><button>question1</button></li>
+          <li><button>question2</button></li>
+          <li><button>question3</button></li>
+          <li><button>question4</button></li>
+        </ol>
+        
+        <div id="score-screen" class="hidden">
+          <h1>This is for the score summary screen</h1>
+          <input type="text" placeholder="Enter Player Initials" />
+          <button>Submit 'Enter better name'</button>
+        </div>
     </div>
 
     <script src="./Assets/JS/Script.Js"></script>
