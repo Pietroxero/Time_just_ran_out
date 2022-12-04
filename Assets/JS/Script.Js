@@ -115,7 +115,7 @@ function checkAnswers (event) {
 }
 
 //Event Listeners
-beginBttn.addEventListener("click", "runQuiz");
+beginBttn.addEventListener("click", runQuiz);
 
 //take advantage of event delegation and listen for click on the parent container
 ansListEl.addEventListener("click", checkAnswers);
