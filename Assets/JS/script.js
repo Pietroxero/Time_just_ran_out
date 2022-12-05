@@ -147,6 +147,29 @@ initialsBttn.onclick = scores;
 //start quiz after clicking start
 beginBttn.onclick = runQuiz;
 
+//this will be the rankings of players who have used this.
+function showScores (){
+    var scores = window.localStorage.getItem(scores) || [];
+    scores.sort(function (a,b) {
+        return b.scores-a.scores;
+    });
+    scores.forEach(function(scores){
+        var listItems = document.createElement("li");
+        listItems.textContent = scores.yourname + "-" +scores.scores;
+        var orderList = document.getElementById("scores");
+        orderList.appendChild(listItems);
+    });
+}
+
+//this clears previous scoring
+function clearScores() {
+    window.localStorage.remove("scores");
+    window.location.reload();
+
+}document.getElementById("clear").onclick = clearScores;
+showScores();
+
+
 
 
 // //function to start the quiz
