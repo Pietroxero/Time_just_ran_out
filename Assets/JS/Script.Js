@@ -1,5 +1,5 @@
 //array for the questions to be asked on the page
-var questions = [
+var quiz = [
   {
     ques: "Commonly used data types DON'T Include:",
     answers: ["Strings", "Booleans", "Alerts", "Numbers"],
@@ -33,55 +33,56 @@ var questions = [
 ];
 
 //DOM elements to be manipulated
-var countEl = document.querySelector("counter");
-var screenEl = document.querySelector('#questionscreen');
-var ansListEl = document.querySelector('#answerList');
-var initialsBttn = document.querySelector("#input-name");
-var nameingEl = document.querySelector("#yourname");
-var beginBttn = document.querySelector("#begin_btn");
+var quizEl = document.querySelector('#questionscreen');
+var timeEl = document.querySelector('#timer');
+var answerEl = document.querySelector('#lists');
+var initialsBtn = document.querySelector("#input-name");
+var beginBtn = document.querySelector("#begin_btn");
+var namingEl = document.querySelector("#yourname");
 var resultEl = document.querySelector("result");
+var resetBtn = document.querySelector('#reset');
 // var enterBttn = document.querySelector()
 // var questionScreen = document.querySelector('#questionscreen');
 // var scoreScreen = document.querySelector('#score-screen');
 
-var quizquestions = 0; //questionsIndex
-var time = questions.length*15;
+var quizIndex = 0; //questionsIndex
+var time = quiz.length*15;
 var timerId;
 
 //Start the quiz
 function runQuiz () {
-    timerId = setInterval(tickoftheClock, 1000);
-    countEl.textContent = time;
-    var startingpageEl = document.getElementById("start-quiz");
-    startingpageEl.setAttribute("class", "hidden");
-    quesEl.removeAttribute("class");
+    timerId = setInterval(timeClock, 1000);
+    timeEl.textContent = time;
+    var startEl = document.getElementById("start-quiz");
+    startEl.setAttribute("class", "hidden");
+    quizEl.removeAttribute("class");
     quickQuestion();
 }
 
 //build the array loop for the questions.
 function quickQuestion () {
-    var quizquestion = questions[quizquestions];
-    var quesEl = document.getElementById("question");
-    quesEl.textContent = quizquestion.ques;
-    ansListEl.innerHTML="",
-    quizquestion.answers.forEach(function(choice, i) {
-        var choosebtn = document.createElement('button');
-        choosebtn.setAttribute("value", choose);
-        choosebtn.textContent = i+1+". "+ choose;
-        choosebtn.onclick = quesClick;
-        ansListEl.appendChild(choosebtn);
+    var quizQuestion = quiz[quizIndex];
+    var riddleEl = document.getElementById("riddle");
+    riddleEl.textContent = quizQuestion.ques;
+    answerEl.innerHTML="",
+    quizQuestion.answers.forEach(function(choose, i) {
+        var selectBtn = document.createElement('button');
+        selectBtn.setAttribute("value", choose);
+        selectBtn.textContent = i+1+". "+ choose;
+        selectBtn.onclick = quesClick;
+        answerEl.appendChild(selectBtn);
     });
 }
 
 //this will check for the correct answers
 function quesClick (){
-    if (this.value !== questions[quizquestions].correct) {
+    if (this.value !== quiz[quizIndex].correct) {
         time -= 10;
         if (time <0) {
             time =0;
         }
-        countEl.textContent = time;
-        resultEl.textContent = 'NOPE! The right answer was ${questions[quizquestions].correct}.';
+        timeEl.textContent = time;
+        resultEl.textContent = 'NOPE! The right answer was ${quiz[quizIndex].correct}.';
     } else {
         resultEl.textContent = 'BING BAM BOOM!';
     }
@@ -89,8 +90,8 @@ function quesClick (){
     setTimeout(function(){
         resultEl.setAttribute("class", "result hidden");
     }, 2000);
-    quizquestions++;
-    if(quizquestions ===questions.length) {
+    quizIndex++;
+    if(quizIndex ===quiz.length) {
         endQuiz();
     } else {
         quickQuestion();
@@ -104,13 +105,13 @@ function endQuiz() {
     endEl.removeAttribute("class");
     var finEl = document.getElementById("final");
     finEl.textContent = time;
-    screenEl.setAttribute("class", "hidden");
+    quizEl.setAttribute("class", "hidden");
 }
 
 //end if timer is up
-function tickoftheClock () {
+function timeClock () {
     time--;
-    countEl.textContent = time;
+    timeEl.textContent = time;
     if (time <=0) {
         endQuiz();
     }
@@ -119,15 +120,15 @@ function tickoftheClock () {
 //this will save the scores to local
 
 function scores () {
-    var yourname = nameingEl.value.trim ();
-    if(yourname !==""){
-        var playerscore = window.localStorage.getItem(playerscore) || [];
-        var newscr = {
+    var playerName = namingEl.value.trim ();
+    if(playerName !==""){
+        var playerScore = window.localStorage.getItem(playerScore) || [];
+        var newScr = {
             score: time,
-            yourname:yourname
+            playerName:playerName
         };
-        playerscore.push(newscr);
-        window.localStorage.setItem("playerscore");
+        playerScore.push(newScr);
+        window.localStorage.setItem("playerScore");
     }
 }
 
@@ -139,13 +140,38 @@ function eventEnter(event) {
     }
 }
 
-nameingEl.onkeyup = eventEnter;
+namingEl.onkeyup = eventEnter;
 
 //save users' score after clicking submit
-initialsBttn.onclick = scores;
+initialsBtn.onclick = scores;
 
 //start quiz after clicking start
-beginBttn.onclick = runQuiz;
+beginBtn.onclick = runQuiz;
+
+//this will be for the highscores btn
+var scoreBtn = document.querySelector('#viewscores');
+
+//this will be the rankings of players who have used this.
+function showScores (){
+    var scores = window.localStorage.getItem(scores) || [];
+    scores.sort(function (a,b) {
+        return b.scores-a.scores;
+    });
+    scores.forEach(function(scores){
+        var listItems = document.createElement("li");
+        listItems.textContent = scores.yourname + "-" +scores.scores;
+        var orderList = document.getElementById("scores");
+        orderList.appendChild(listItems);
+    });
+}
+
+//this clears previous scoring
+function clearScores() {
+    window.localStorage.remove("scores");
+    window.location.reload();
+
+}document.getElementById("clear").onclick = clearScores;
+showScores();
 
 
 
