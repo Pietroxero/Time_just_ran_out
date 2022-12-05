@@ -12,15 +12,19 @@
     <header id="heading">
       <div class="strip">
         <div>
-          <a class="playerScores">Highscores</a>
+          <a 
+            ><button class="playerScores" id="viewscores">Highscores</button></a
+          >
         </div>
 
-        <div class="counter">Timer:</div>
+        <div class="timer">
+          <p>Timer:<span id="timer">0</span></p>
+        </div>
       </div>
     </header>
 
-    <div id="start-quiz" class="quizscreen">
-      <section class="blockinfo">
+    <div id="start-quiz" class="start">
+      <div class="info" id="startpage">
         <h1>Coding Quiz Challenge</h1>
         <p>
           Try to answer the following code-related question within the time
@@ -30,28 +34,31 @@
           Keep in mind that incorrect answers will penalize your score/time by
           ten seconds!
         </p>
-      </section>
+      </div>
       <!--Start test Button-->
-      <button id="begin_btn" onclick="runQuiz()">BEGIN!!</button>
+      <button id="begin_btn">BEGIN!!</button>
     </div>
 
     <div id="questionscreen" class="hidden">
-      <h1 id="question"></h1>
-        <div id="answerList">
-          <!-- <li><button>question1</button></li>
+      <h1 id="riddle"></h1>
+      <div id="lists" class="lists">
+        <!-- <li><button>question1</button></li>
           <li><button>question2</button></li>
           <li><button>question3</button></li>
           <li><button>question4</button></li> -->
-        </div>
-        
-        <div id="score-screen" class="hidden">
-          <h1>This is for the score summary screen</h1>
-          <p>Final Score: <span id="final"></span></p>
-          <p>Please enter your Initials: <input type="text" id="yourname"/>
+      </div>
+
+      <div id="score-screen" class="hidden">
+        <h1>This is for the score summary screen</h1>
+        <p>Final Score: <span id="final"></span></p>
+        <p>
+          Please enter your Initials: <input type="text" id="yourname" />
           <button id="input-name">Submit 'Enter better name'</button>
-        </div>
-        <div id="result" class="result hidden"></div>
+        </p>
+      </div>
     </div>
+
+    <div id="result" class="result hidden"></div>
 
     <script src="./Assets/JS/Script.Js"></script>
   </body>
