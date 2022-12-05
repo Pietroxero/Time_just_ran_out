@@ -53,7 +53,7 @@ var quiz = [
   function runQuiz () {
       timerId = setInterval(timeClock, 1000);
       timeEl.textContent = time;
-      var startEl = document.getElementById("start-quiz");
+      var startEl = document.getElementById("startpage");
       startEl.setAttribute("class", "hidden");
       quizEl.removeAttribute("class");
       quickQuestion();
@@ -170,7 +170,8 @@ var quiz = [
       window.localStorage.remove("scores");
       window.location.reload();
   
-  }document.getElementById("clear").onclick = clearScores;
+  }
+  document.getElementById("clear").onclick = clearScores;
   showScores();
   
   
