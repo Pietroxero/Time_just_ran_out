@@ -44,7 +44,7 @@ font-size: 20px;
   align-items: center;
 }
 
-#start-quiz{
+.start{
     /* display: inline-block;
     align-items: center;
     justify-content: center;
@@ -59,6 +59,11 @@ font-size: 20px;
     min-height: 80vh;
 }
 
+p {
+    margin: 15px 15px;
+}
+
+
 #quizscreen {
     display:flex;
     flex-direction: column;
@@ -68,6 +73,24 @@ font-size: 20px;
     padding-left: 15%;
     padding-right: 15%;
     min-height: 80vh;
+}
+
+main {
+    width: 80%;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result{ 
+    font-style: bold;
+    font-size: 120%;
+    margin-top: 20px;
+    padding-top: 15px;
+    color: black;
+    border-top: 2px solid #4B0082;
 }
 
 button {

@@ -41,6 +41,7 @@ var quiz = [
   var namingEl = document.querySelector("#yourname");
   var resultEl = document.querySelector("#result");
   var resetBtn = document.querySelector('#reset');
+  var startEl = document.querySelector("#startpage");
   // var enterBttn = document.querySelector()
   // var questionScreen = document.querySelector('#questionscreen');
   // var scoreScreen = document.querySelector('#score-screen');
@@ -52,8 +53,7 @@ var quiz = [
   //Start the quiz
   function runQuiz () {
       timerId = setInterval(timeClock, 1000);
-      timeEl.textContent = time;
-      var startEl = document.getElementById("startpage");
+      timeEl.textContent = time;      
       startEl.setAttribute("class", "hidden");
       quizEl.removeAttribute("class");
       quickQuestion();
@@ -82,7 +82,7 @@ var quiz = [
               time =0;
           }
           timeEl.textContent = time;
-          resultEl.textContent = 'NOPE! The right answer was ' + quiz[quizIndex].correct ;
+          resultEl.textContent = `NOPE! The right answer was ${quiz[quizIndex].correct}.`;
       } else {
           resultEl.textContent = 'BING BAM BOOM!';
       }
@@ -120,15 +120,16 @@ var quiz = [
   //this will save the scores to local
   
   function scores () {
-      var playerName = namingEl.value.trim ();
-      if(playerName !==""){
-          var playerScore = JSON.parse(window.localStorage.getItem("playerScore")) || [];
+      var playerName = namingEl.value.trim();
+      if(playerName !== ""){
+          var playerScore = window.localStorage.getItem(playerScore) || [];
           var newScr = {
               score: time,
-              playerName:playerName
+              playerName: playerName
           };
           playerScore.push(newScr);
           window.localStorage.setItem("playerScore", JSON.stringify(playerScore));
+          // make a function to reset back to start screen and call it here.
       }
   }
   

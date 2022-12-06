@@ -12,7 +12,9 @@
     <header id="heading">
       <div class="strip">
         <div>
-          <a href="scoring.html"><button class="playerScores" id="viewscores">Highscores</button></a>
+          <a
+            ><button class="playerScores" id="viewscores">Highscores</button></a
+          >
         </div>
 
         <div class="timer">
@@ -21,29 +23,32 @@
       </div>
     </header>
 
-    <div id="start-quiz" class="start">
-      <div class="info" id="startpage">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-          Try to answer the following code-related question within the time
-          limit.
-        </p>
-        <p>
-          Keep in mind that incorrect answers will penalize your score/time by
-          ten seconds!
-        </p>
+    <main>
+      <div id="startpage" class="start">
+        <div class="info">
+          <h1>Coding Quiz Challenge</h1>
+          <p>
+            Try to answer the following code-related question within the time
+            limit.
+          </p>
+          <p>
+            Keep in mind that incorrect answers will penalize your score/time by
+            ten seconds!
+          </p>
+        </div>
+        <!--Start test Button-->
+        <button id="begin_btn">BEGIN!!</button>
       </div>
-      <!--Start test Button-->
-      <button id="begin_btn">BEGIN!!</button>
-    </div>
 
-    <div id="questionscreen" class="hidden">
-      <h1 id="riddle"></h1>
-      <div id="lists" class="lists">
-        <!-- <li><button>question1</button></li>
-          <li><button>question2</button></li>
-          <li><button>question3</button></li>
-          <li><button>question4</button></li> -->
+      <div id="questionscreen" class="hidden">
+        <h1 id="riddle"></h1>
+        <div id="lists" class="lists">
+          <!-- <li><button>question1</button></li>
+            <li><button>question2</button></li>
+            <li><button>question3</button></li>
+            <li><button>question4</button></li> -->
+        </div>    
+        <div id="result" class="result hidden"></div>    
       </div>
 
       <div id="score-screen" class="hidden">
@@ -54,9 +59,9 @@
           <button id="input-name">Submit 'Enter better name'</button>
         </p>
       </div>
-    </div>
 
-    <div id="result" class="result hidden"></div>
+      
+    </main>
 
     <script src="./Assets/JS/Script.Js"></script>
   </body>
