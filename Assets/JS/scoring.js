@@ -3,7 +3,7 @@
   
   //this will be the rankings of players who have used this.
   function showScores (){
-      var scores = window.localStorage.getItem(scores) || [];
+      var scores = JSON.parse(window.localStorage.getItem(scores)) || [];
       scores.sort(function (a,b) {
           return b.scores-a.scores;
       });
@@ -17,7 +17,7 @@
   
   //this clears previous scoring
   function clearScores() {
-      window.localStorage.remove("scores");
+      window.localStorage.removeItem("scores");
       window.location.reload();
   
   }

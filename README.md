@@ -22,6 +22,7 @@ WHEN the game is over
 THEN I can save my initials and score
 
 ## Table of Contents
+Description, user story, acceptance criteria, screenshots, deployed site link
 
 ## Screenshots
 ![Screenshot of Website]
@@ -31,4 +32,4 @@ THEN I can save my initials and score
 
 ## Deployed Website
 [Website URL]: 
-(https://pietroxero.github.io/  /)
+(https://pietroxero.github.io/Time_just_ran_out/)

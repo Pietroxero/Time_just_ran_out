@@ -122,13 +122,13 @@ var quiz = [
   function scores () {
       var playerName = namingEl.value.trim ();
       if(playerName !==""){
-          var playerScore = window.localStorage.getItem(playerScore) || [];
+          var playerScore = JSON.parse(window.localStorage.getItem("playerScore")) || [];
           var newScr = {
               score: time,
               playerName:playerName
           };
           playerScore.push(newScr);
-          window.localStorage.setItem("playerScore");
+          window.localStorage.setItem("playerScore", JSON.stringify(playerScore));
       }
   }
   
