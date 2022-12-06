@@ -25,16 +25,12 @@ THEN I can save my initials and score
 Description, user story, acceptance criteria, screenshots, deployed site link
 
 ## Screenshots
-![Screenshot of Website]
-![Screenshot of Website]
-![Screenshot of Website]
-![Screenshot of Website]
+![Screenshot of Website] (./Assets/Images/Quiz start.png)
+![Screenshot of Website](./Assets/Images/Wrong answer.png)
+![Screenshot of Website](./Assets/Images/correct answer.png)
+![Screenshot of Website](./Assets/Images/initials screen.png)
 
 ## Deployed Website
 [Website URL]: 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 519c1998ab597b0c5225aed234acbe024cddb104
 (https://pietroxero.github.io/Time_just_ran_out/)
