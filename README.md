@@ -24,6 +24,9 @@ THEN I can save my initials and score
 ## Table of Contents
 Description, user story, acceptance criteria, screenshots, deployed site link
 
+## Testing
+Much of the testing that I went through was using console.log to check if functions were being called. When I was building the initial JS logic I started over as my organizational through process changed and why I left sections of code greyed out. one area of struggle I had was getting the page of the high scores to populate like the questions, what I changed mindset in doing was having the highscores section be its own html and js linked together in the index page.
+
 ## Screenshots
 
 ![Screenshot of Website](./Assets/Images/Quiz%20start.png)
