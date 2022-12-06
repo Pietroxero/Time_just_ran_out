@@ -33,5 +33,8 @@ Description, user story, acceptance criteria, screenshots, deployed site link
 ## Deployed Website
 [Website URL]: 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 519c1998ab597b0c5225aed234acbe024cddb104
 (https://pietroxero.github.io/Time_just_ran_out/)
