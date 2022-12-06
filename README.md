@@ -35,6 +35,3 @@ Description, user story, acceptance criteria, screenshots, deployed site link
 [Website URL]: 
 
 (https://pietroxero.github.io/Time_just_ran_out/)
-
-
-\Assets\Images\Wrong answer.png
