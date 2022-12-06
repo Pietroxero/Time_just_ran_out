@@ -26,10 +26,10 @@ Description, user story, acceptance criteria, screenshots, deployed site link
 
 ## Screenshots
 
-![Screenshot of Website](./Assets/Images/Quiz%2start.png)
-![Screenshot of Website](./Assets/Images/Wrong%2answer.png)
-![Screenshot of Website](./Assets/Images/correct%2answer.png)
-![Screenshot of Website](./Assets/Images/initials%2screen.png)
+![Screenshot of Website](./Assets/Images/Quiz%20start.png)
+![Screenshot of Website](./Assets/Images/Wrong%20answer.png)
+![Screenshot of Website](./Assets/Images/correct%20answer.png)
+![Screenshot of Website](./Assets/Images/initials%20screen.png)
 
 
 ## Deployed Website
