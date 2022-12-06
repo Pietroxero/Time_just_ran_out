@@ -25,6 +25,7 @@ THEN I can save my initials and score
 Description, user story, acceptance criteria, screenshots, deployed site link
 
 ## Screenshots
+
 ![Screenshot of Website](./Assets/Images/Quiz%2start.png)
 ![Screenshot of Website](./Assets/Images/Wrong%2answer.png)
 ![Screenshot of Website](./Assets/Images/correct%2answer.png)
