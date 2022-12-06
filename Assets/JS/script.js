@@ -39,7 +39,7 @@ var quiz = [
   var initialsBtn = document.querySelector("#input-name");
   var beginBtn = document.querySelector("#begin_btn");
   var namingEl = document.querySelector("#yourname");
-  var resultEl = document.querySelector("result");
+  var resultEl = document.querySelector("#result");
   var resetBtn = document.querySelector('#reset');
   // var enterBttn = document.querySelector()
   // var questionScreen = document.querySelector('#questionscreen');
@@ -82,7 +82,7 @@ var quiz = [
               time =0;
           }
           timeEl.textContent = time;
-          resultEl.textContent = 'NOPE! The right answer was ${quiz[quizIndex].correct}.';
+          resultEl.textContent = 'NOPE! The right answer was ' + quiz[quizIndex].correct ;
       } else {
           resultEl.textContent = 'BING BAM BOOM!';
       }
@@ -171,7 +171,8 @@ var quiz = [
       window.location.reload();
   
   }
-  document.getElementById("clear").onclick = clearScores;
+
+  //document.getElementById("clear").onClick = clearScores;  // doesn't appear to be an element with and id of clear in the index.html
   showScores();
   
   
